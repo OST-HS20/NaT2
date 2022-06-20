@@ -1,15 +1,25 @@
 % Document information
-\newcommand{\titleinfo}{Zusammenfassung Template}
-\newcommand{\authorinfo}{Name Nachname}
+\newcommand{\titleinfo}{Zusammenfassung NaT2}
+\newcommand{\authorinfo}{Sandro Pedrett}
 \newcommand{\version}{1.0}
-\newcommand{\versioninfo}{FS21}
+\newcommand{\versioninfo}{FS22}
 % Header
 \include{Template/Header}
+
+% open-book mit n-spire TR
+\newcommand{\script}[1]{\verweisextern{script}{#1}}
 
 % Document
 \begin{document}
 
-\tableofcontents
-\input{Sections/First Section}
+\input{Sections/Wahrscheinlichkeit}
+\input{Sections/Zufallsprozess}
+\input{Sections/Rauschen}
+\input{Sections/Digital}
+\input{Sections/Informationstheorie}
+\input{Sections/Quellencodierung}
+\input{Sections/Kanalcodierung}
+\clearpage
+\input{Sections/Anhang}
 
 \end{document}
