@@ -31,7 +31,18 @@ Eigenschaften:
 \end{itemize}
 
 \subsubsection{Statische Autokorrelation}\script{169}
-\textbf{Beispiel}
+\begin{enumerate}[nosep]
+	\item Beliebger Punkt $P$ auf $s_{1,2}$ wählen, dieser Amplitudenwert ergibt die $x_k$ Achse
+	\item Punkt $P$ um $\tau$ verschieben $P'$
+	\item $s_{1+2}$ um $\tau$ verschieben und neu einzeichnen
+	\item $P'$ auf verschobenem $s$ ablesen, dieser Amplitudewert ergibt $x_\tau$ Achse
+	\item $p_{x_xx_\tau}(x_k,x_\tau)$ ist die Wahrscheinlichkeit des Auftreten der jeweiligen $s$ Funktion. 
+	\item Start bei (1), für jede weitere Amplituden Möglichkeit
+\end{enumerate}
+~\\
+\textbf{Tip:} Summe der einzelnen Projektionen auf $x_k$ Achse muss der 1-dimensionaler Amplitudenverteilung entsprechen. ~\\
+
+\noindent\textbf{Beispiel}
 \begin{center}
 	\includegraphics[width=\columnwidth]{Images/statische_ak1}
 \includegraphics[width=0.8\columnwidth]{Images/statische_ak2}
@@ -46,8 +57,6 @@ Daraus lässt sich die Autokorrelationsfunktion $f_{xx}(\tau)$ berechnen:
 \begin{center}
 	\includegraphics[width=0.6\columnwidth]{Images/statische_ak3}
 \end{center}
-
-
 
 \subsection{Ergodizität}
 Ein stationärer Prozess ist zudem noch ergodisch, wenn alle zeitlichen Mittelwerten (Zeitmittelwert und zeitlich gemittelte Autokorrelation) den statistischen Mittelwerten (Erwartungswert und statistisch gemittelte Autokorrelation) entsprechen. Jeder ergodische Zufallsprozess ist auch stationär, aber nicht umgekehrt.
