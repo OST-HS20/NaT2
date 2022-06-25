@@ -1,17 +1,20 @@
 \section{Informationstheorie}
-\subsection{Grundlagen}\script{203}\label{entropie}~\\
-\textbf{Entropie} $H(X)$ (in [bit/Symbol]) ist der statistisch gemittelte Informationsgehalt. Ist die Quelle (DMS) gedächnisfrei, entspricht dies gerade dem Erwartungswert:
-\[
-H(X) = E[I(x_i)] = \sum_{i}P(X_i)I(X_i) = -\sum_{i}P(X_i)\log_2P(X_i)
-\]
+\subsection{Entropie}\label{entropie}
+\script{203} \textbf{Entropie} $H(X)$ (in [bit/Symbol]) ist der statistisch gemittelte Informationsgehalt. Ist die Quelle (DMS) gedächnisfrei, entspricht dies gerade dem Erwartungswert:
+\begin{align*}
+	&H(X) = E[I(x_i)] \\
+	&= -\left(\sum_{i}P(X_i)\log_2P(X_i) + \sum_{i}P(1-X_i)\log_2P(1-X_i)\right)
+\end{align*}
+\textbf{ACHTUNG:} Falls eine Quelle $P_A("1") = 0.6$ ist, dann entspricht die Entropie $H(A) = -0.6\log_2(0.6) - 0.4\log_2(0.4) = 0.971$bit/Symbol~\\
+
 Die \textbf{maximale Entropie} $H_{max}(X) = \log_2 m$ was im binären Fall $m=2$ genau $1$ ergibt. Die Entropie kann bei unabhängigen Quellen summiert werden.~\\~\\
 
-\textbf{Informationsgehalt I}
+\textbf{Informationsgehalt} Der maximale Informationsgehalt werden durch die Symbole mit der kleinsten Auftretungswahr.keit generiert!
 \[
 I(X_i) = -\log_2P(x_i)
 \]
 
-\textbf{Redundanz}
+\textbf{Redundanz} Siehe auch Kapitel \ref{redundanz}
 \[
 R = H_{max} - H(X)
 \]

@@ -23,11 +23,9 @@ Weil $\vec{a}\oplus\vec{a} = \vec{0}$, gilt zwingend, dass zu jedem linearen Cod
 
 \noindent Die \textbf{Hamming-Schranke} \script{222} stellt sicher, dass Fehler mit Sicherheit korrigiert werden können. Dabei ist $t$ die korrigierbaren Fehler (Siehe Kapitel \ref{fehlererkennung}) und (n,k)-Blockcode vom Blockcode.
 \[
-2^{n-k} \ge \sum_{i=0}^{t_c}\begin{pmatrix}
-	n \\ i
-\end{pmatrix}
+2^{n-k} \ge \sum_{i=0}^{t_c}\begin{pmatrix}n \\ i\end{pmatrix}
 \]
-Gilt für ein Code das Gleichheitszeichen, handelt es sich um einen perfekten Code.
+\textbf{Hinweis:} Mit TR benutze TI nSpire nCr(n,i). Zudem gilt für ein Code bei dem das Gleichheitszeichen ist, handelt es sich um einen perfekten Code.
 
 \subsection{Fehlererkennung}\script{218}\label{fehlererkennung}
 Durch die minimale Hamming-Distanz $d_{min}$ ist die Anzahl korrigierbarer und detektierbarer Fehler gegeben:
@@ -38,6 +36,11 @@ Durch die minimale Hamming-Distanz $d_{min}$ ist die Anzahl korrigierbarer und d
 
 \subsection{Systematische Blockcodes}
 \script{128} Ein Blockcode $C$ bezeichnet man als systematisch, falls Elemente des ursprünglichen Datenvektors $d$ an ausgewählter Positioen des Codewortes $c$ wiederzufinden sind.
+
+Um ein Codewort aus einem Datenwort des geordneten-systematischen Codes $C_s$ zun finden kann mit $m = n-k$ berechnet werden:
+\[
+c= (d^{(m)} \mod g) + d^{(m)}
+\]
 
 \subsubsection{Generator Matrix}
 Die Generatormatrix $\mathbf{G}$ generiert ein gültiges Codewort $c$ aus dem Datenwort $d$.
@@ -67,6 +70,14 @@ Das Fehlersyndrom $s$ erlaubt die Erkennung und eventuelle Korrektur von Übertr
 \end{align*}
 
 Wenn die zyklische Verschiebung $\sigma(\vec{c})$ wieder ein gültiges Codewort ergibt, so handelt es sich um einen linearen Blockcode.
+
+\subsubsection{Bildung von zyklischen Blockcodes}
+\script{233}
+Ein gültiges Codewort $c(x)$ von einem zyklischen (n,k)-Code, welche geordnet sind, können wie folgt beschrieben werden:
+\[
+c(x) = q(x)\cdot g(x) = x^{(n-k)}\cdot d(x) + p(x)
+\]
+Die Koeffizienten mit Potenz $>=$ n-k enstprechen somit - dividert durch $x^{n-k}$ - gerade dem Datenwort $d(x)$. Die Koeffizienten mit $<$ n-k bilden das Paritätsbit $p(x)$
 
 \subsection{Polynomdarstellung}
 Eine weitere Darstellung für zyklische Blockcodes:
@@ -110,6 +121,9 @@ Das Fehlersyndrom $s$ from Grad $m=n-k$ dient zur Ermittlung von Übertragungsfe
 \[
 s(x) = c_r(x) \mod g(x)
 \]
+Wenn das Hamming-Gewicht von $s(x) < t_c$, dann ist $s(x) = e(x)$ und das korrigierte Codewort $c(x) = c_r(x) - e(x)$ 
+
+
 
 \subsection{Realisierung}
 Dabei werden die Generator-Elemente sortiert und anschliessend beschriftet. \textbf{Beispiel} (n=23,k=12)-Blockcode

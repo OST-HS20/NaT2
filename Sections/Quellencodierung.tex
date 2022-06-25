@@ -8,7 +8,7 @@ Die Entropiecodierung hat das Ziel, Redundanz einer gedächnisfreien Quelle zu r
 	\item unmittelbar decodierbar
 \end{enumerate}
 
-\subsection{Redundanz und Effizienz}
+\subsection{Redundanz und Effizienz}\label{redundanz}
 \script{211} Eine DMS (Gedächnisfreie Quelle) dessen Symbolwerte $x_i$ mit Wahr.keit $P(x_i)$ auftreten, und auf ein Codewort $c$ mit Länge $n$ und Anzahl Symbole $m$ gemappt werden. Effizient ist die Codierung, wenn die \textbf{mittlere Codelänge} $L$ möglichst klein wird d.h. häufig vorkommende Codeworte sollen kurz sein. Die Entropie $H(X)$ (siehe Kapitel \ref{entropie}) muss kleiner sein als $L$!
 \[
 L = \sum_{i=1}^{m}P(x_i)n_i \ge H(X)
@@ -18,10 +18,10 @@ L = \sum_{i=1}^{m}P(x_i)n_i \ge H(X)
 \[
 R = L - H(X)
 \]
-\textbf{Achtung:} Wenn $32\times32$ Pixel für ein Icon verwendet werden, berechnet sich die totale entfernte Redudanz mit $R = 32\cdot32(L_1 - L_2)$, weil pro Symbol Redundanz entfernt wird.
+\textbf{Achtung:} Wenn $32\times32$ Pixel für ein Icon verwendet werden, berechnet sich die totale entfernte Redudanz mit $R = 32\cdot32(L_1 - L_2)$, weil pro Symbol Redundanz entfernt wird.~\\~\\
 
 
-\noindent Daraus lässt sich die \textbf{Effizienz} für die Quellencodierung berechnen:
+\noindent Die \textbf{Effizienz} für die Quellencodierung berechnet sich wie folgt:
 \[
 \eta = \frac{H(X)}{L} \le 1
 \]
@@ -40,7 +40,7 @@ Die Shannon-Fano Codierung ist Präfix-frei und letzter Teilungsschritt liefert 
 \end{center}
 
 \subsubsection{Huffman}\script{213}
-Huffman Codierung liefert die maximale Effizienz und haben keine reduntante Bits
+Huffman Codierung liefert die maximale Effizienz und haben keine reduntante Bits. Eine Eigenschaft von dieser Codierung ist, dass die längste Anzahl Bits immer gerade ist.
 \begin{enumerate}[nosep]
 	\item Symoble nach \textbf{absteigender} Wahr.keit anordnen
 	\item Unterste beiden Symbole werden zu Symbolgruppe zusammengefasst
@@ -52,3 +52,7 @@ Huffman Codierung liefert die maximale Effizienz und haben keine reduntante Bits
 \begin{center}
 	\includegraphics[width=\columnwidth]{Images/huffman}
 \end{center}
+Die mittlere Codewortlänge $L$ für die Effizient $\eta = \frac{H(X)}{L}$ ist:
+\[
+L = (0.3+0.25+0.2)\cdot2 + 0.12\cdot 3 + (0.8+0.05)\cdot 4 = 2.38
+\]
